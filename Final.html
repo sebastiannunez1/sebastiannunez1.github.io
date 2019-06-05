@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>This is a test</title>
+<script type="text/javascript" src="what.js"></script>
+</head>
+<body>
+<script type="text/processing">
+/** Computer Science Final
+*Sebatian Nuñez
+*Period 2
+*/
+int highScore;
+int score;
+PImage Dude; //Dude
+
+void setup(){
+  size(600,600);
+  background(149,16,255);
+  Dude = loadImage("./images/Dude.png"); //shows dude on screen
+}
+
+void draw() { 
+  text("Score = "+score,220,25);
+  text("High Score = "+highScore,220, 50);
+  image(Dude, mouseX-75, mouseY-75); //Makes dude go around where cursor is
+makeButton();
+if(mousePressed==true){ //Clears Screen of Dude
+  background(149,16,255);
+score++;
+highScore++;
+}
+}
+
+
+void makeButton(){ 
+fill(69);
+if(mouseX > 100 && mouseX < 280 && mouseY > 200 && mouseY < 250){
+fill(120); 
+}
+rect(100,200, 180, 50, 15); 
+fill(255,0,0);
+textSize(35);
+if(mouseX > 100 && mouseX < 280 && mouseY > 200 && mouseY < 250){
+fill(57,255,20); //Change to Neon Green IF Mouse X and MouseY are in RECT
+if(mousePressed){
+textSize(41); //WHEN CLICKED MAKES THE TEXT SIZE BIGGER
+}
+}
+text("Bouton", 130, 240);
+}
+
+</script>
+<canvas id="sketch" style="border: 1px solid black;"></canvas>
+</body>
+</html>
